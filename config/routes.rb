@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :users, except: [:create]
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
+    post 'robots', to: 'robots#create'
   end
 
 
