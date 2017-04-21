@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    render json: @users , include: ['events_attending']
   end
 
   # GET /users/1
@@ -46,6 +46,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:nickname, :photo, :firstname, :lastname, :motto, :skill, :victory, :lose, :email, :password, :password_confirmation)
+      params.require(:user).permit(:nickname, :photo, :firstname, :lastname, :motto, :skill, :victory, :lose, :email, :password, :password_confirmation, events_attending_ids:[])
     end
 end

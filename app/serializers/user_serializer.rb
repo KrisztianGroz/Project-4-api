@@ -3,4 +3,5 @@ class UserSerializer < ActiveModel::Serializer
   has_many :robots
   has_many :arenas
   has_many :events
+  has_many :events_attending
 end
