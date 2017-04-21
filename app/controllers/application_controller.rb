@@ -10,10 +10,18 @@ class ApplicationController < ActionController::API
   end
 
   def current_user
-    @current_user ||= User.find(decoded_token[:id]) if id_found?
+    @current_user ||= User.find(decoded_token[:id ]) if id_found?
   rescue
     nil
   end
+
+  def current_user_nickname
+    @current_user_nickname ||= User.find(decoded_token[:id ]) if id_found?
+  rescue
+    nil
+  end
+
+
 
   private
 
