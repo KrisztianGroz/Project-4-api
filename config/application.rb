@@ -32,7 +32,7 @@ module Project4
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'  #has to change it local host 7000 ! ;)
+        origins ['localhost:7000', 'https://git.heroku.com/guarded-everglades-65202.git']  #has to change it local host 7000 ! ;)
 
         resource '*', :headers => :any, :methods => :any
       end
